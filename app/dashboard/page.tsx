@@ -1,59 +1,51 @@
-import AppointmentChart from "@/components/dashboard/AppointmentChart";
 import AppLayout from "@/components/layout/AppLayout";
-import KpiCard from "@/components/dashboard/KpiCard";
-import RecentAppointments from "@/components/dashboard/RecentAppointments";
-
-import {
-  Users,
-  CalendarCheck,
-  IndianRupee,
-  Stethoscope,
-} from "lucide-react";
+import QuickActionsBar from "@/components/dashboard/QuickActionsBar";
+import KpiCardGrid from "@/components/dashboard/KpiCardGrid";
+import RevenueOverviewChart from "@/components/dashboard/RevenueOverviewChart";
+import AppointmentsDonutChart from "@/components/dashboard/AppointmentsDonutChart";
+import UpcomingAppointmentsCard from "@/components/dashboard/UpcomingAppointmentsCard";
+import AiReceptionistActivityCard from "@/components/dashboard/AiReceptionistActivityCard";
+import RecentPatientsTable from "@/components/dashboard/RecentPatientsTable";
 
 export default function DashboardPage() {
   return (
-    <AppLayout>
-      {/* KPI Cards */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <KpiCard
-          title="Patients"
-          value="1,248"
-          change="+12% this month"
-          icon={<Users size={24} />}
-        />
+    <AppLayout title="Dashboard" description="Welcome back, Hannan 👋">
+      <div className="space-y-5">
+        {/* Quick Actions Action Bar */}
+        <QuickActionsBar />
 
-        <KpiCard
-          title="Appointments"
-          value="324"
-          change="+8% this week"
-          icon={<CalendarCheck size={24} />}
-        />
+        {/* Responsive Grid of 4 Compact KPI Cards */}
+        <KpiCardGrid />
 
-        <KpiCard
-          title="Revenue"
-          value="₹4.8L"
-          change="+15% this month"
-          icon={<IndianRupee size={24} />}
-        />
+        {/* Analytics Section */}
+        <div className="grid grid-cols-1 gap-5 xl:grid-cols-3">
+          {/* Revenue Overview */}
+          <div className="xl:col-span-2 rounded-2xl border border-[#D2E7DC] dark:border-slate-700 bg-[#F8FCFA] dark:bg-slate-900 p-4.5 sm:p-5 shadow-xs flex flex-col justify-between transition-colors duration-300">
+            <RevenueOverviewChart />
+          </div>
 
-        <KpiCard
-          title="Doctors"
-          value="18"
-          change="+2 new hires"
-          icon={<Stethoscope size={24} />}
-        />
-      </div>
-
-      {/* Analytics Section */}
-      <div className="mt-8 grid grid-cols-1 gap-6 xl:grid-cols-3">
-        {/* Chart */}
-        <div className="xl:col-span-2 rounded-2xl border border-[#D2E7DC] bg-[#F8FCFA] p-6 shadow-xs">
-          <AppointmentChart />
+          {/* Appointments Statistics */}
+          <div className="rounded-2xl border border-[#D2E7DC] dark:border-slate-700 bg-[#F8FCFA] dark:bg-slate-900 p-4.5 sm:p-5 shadow-xs flex flex-col justify-between transition-colors duration-300">
+            <AppointmentsDonutChart />
+          </div>
         </div>
 
-        {/* Recent Appointments */}
-        <div className="rounded-2xl border border-[#D2E7DC] bg-[#F8FCFA] p-6 shadow-xs">
-          <RecentAppointments />
+        {/* Lower Dashboard Grid */}
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+          {/* Upcoming Appointments */}
+          <div className="rounded-2xl border border-[#D2E7DC] dark:border-slate-700 bg-[#F8FCFA] dark:bg-slate-900 p-4.5 sm:p-5 shadow-xs flex flex-col justify-between transition-colors duration-300">
+            <UpcomingAppointmentsCard />
+          </div>
+
+          {/* AI Receptionist Activity */}
+          <div className="rounded-2xl border border-[#D2E7DC] dark:border-slate-700 bg-[#F8FCFA] dark:bg-slate-900 p-4.5 sm:p-5 shadow-xs flex flex-col justify-between transition-colors duration-300">
+            <AiReceptionistActivityCard />
+          </div>
+        </div>
+
+        {/* Recent Patients */}
+        <div className="rounded-2xl border border-[#D2E7DC] dark:border-slate-700 bg-[#F8FCFA] dark:bg-slate-900 p-4.5 sm:p-5 shadow-xs transition-colors duration-300">
+          <RecentPatientsTable />
         </div>
       </div>
     </AppLayout>

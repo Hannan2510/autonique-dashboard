@@ -28,11 +28,11 @@ export default function AppointmentChart() {
           <h2 className="text-xl font-bold text-slate-900 tracking-tight">
             Weekly Appointment Trends
           </h2>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-sm text-slate-500 mt-0.5">
             Total visit volume per day
           </p>
         </div>
-        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-[#2E7D5B] border border-emerald-200/50">
+        <span className="text-sm font-semibold px-3 py-1 rounded-full bg-emerald-50 text-[#2E7D5B] border border-emerald-200/50">
           +14% vs last week
         </span>
       </div>
@@ -45,12 +45,12 @@ export default function AppointmentChart() {
               dataKey="day"
               axisLine={false}
               tickLine={false}
-              tick={{ fill: "#64748b", fontSize: 12 }}
+              tick={{ fill: "#64748b", fontSize: 13 }}
             />
             <YAxis
               axisLine={false}
               tickLine={false}
-              tick={{ fill: "#64748b", fontSize: 12 }}
+              tick={{ fill: "#64748b", fontSize: 13 }}
             />
             <Tooltip
               contentStyle={{
@@ -58,7 +58,7 @@ export default function AppointmentChart() {
                 borderRadius: "12px",
                 borderColor: "#cbd5e1",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
-                fontSize: "12px",
+                fontSize: "13px",
                 fontWeight: "600",
                 color: "#0f172a",
               }}

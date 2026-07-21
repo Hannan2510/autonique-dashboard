@@ -32,7 +32,7 @@ export default function RecentAppointments() {
         <h2 className="text-xl font-bold text-slate-900 tracking-tight">
           Recent Appointments
         </h2>
-        <span className="text-xs font-semibold text-[#2E7D5B]">Today</span>
+        <span className="text-sm font-semibold text-[#2E7D5B]">Today</span>
       </div>
 
       <div className="space-y-3">
@@ -54,17 +54,17 @@ export default function RecentAppointments() {
                     {appointment.patient}
                   </p>
 
-                  <p className="text-xs text-slate-500">
+                  <p className="text-sm text-slate-500">
                     {appointment.doctor}
                   </p>
                 </div>
               </div>
 
               <div className="text-right">
-                <p className="text-xs font-semibold text-slate-900 mb-1">{appointment.time}</p>
+                <p className="text-sm font-semibold text-slate-900 mb-1">{appointment.time}</p>
 
                 <span
-                  className={`text-[11px] font-semibold px-2 py-0.5 rounded-full border ${
+                  className={`text-xs font-semibold px-2.5 py-0.5 rounded-full border ${
                     appointment.status === "Confirmed"
                       ? "bg-emerald-50 text-[#2E7D5B] border-emerald-200/50"
                       : appointment.status === "Pending"
