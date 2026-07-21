@@ -14,20 +14,20 @@ export default function KpiCard({
   icon,
 }: KpiCardProps) {
   return (
-    <div className="group rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-blue-500/10">
+    <div className="group rounded-2xl border border-[#D2E7DC] bg-[#F8FCFA] p-6 shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:border-[#2E7D5B]/40 hover:shadow-md hover:shadow-[#2E7D5B]/10">
       <div className="flex items-center justify-between">
-        <div className="text-slate-400 text-sm">{title}</div>
+        <div className="text-slate-500 font-medium text-sm">{title}</div>
 
-      <div className="rounded-xl bg-slate-800 p-3 text-blue-400 transition group-hover:bg-blue-600 group-hover:text-white">
-  {icon}
-</div>
+        <div className="rounded-xl bg-[#2E7D5B]/10 p-3 text-[#2E7D5B] transition-colors group-hover:bg-[#2E7D5B] group-hover:text-white">
+          {icon}
+        </div>
       </div>
 
-      <h2 className="mt-4 text-3xl font-bold text-white">
+      <h2 className="mt-4 text-3xl font-extrabold text-slate-900 tracking-tight">
         {value}
       </h2>
 
-      <p className="mt-2 text-sm text-green-400">
+      <p className="mt-2 text-xs font-semibold text-emerald-800 bg-[#E7F3EC] border border-[#C6E2D2] inline-block px-2.5 py-0.5 rounded-full">
         {change}
       </p>
     </div>

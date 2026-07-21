@@ -1,40 +1,40 @@
 import { Bell, Search } from "lucide-react";
 
 export default function Navbar() {
-    const today = new Date().toLocaleDateString("en-IN", {
-  weekday: "long",
-  month: "long",
-  day: "numeric",
-});
+  const today = new Date().toLocaleDateString("en-IN", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
-    <header className="flex items-center justify-between border-b border-slate-800 pb-5">
+    <header className="flex items-center justify-between border-b border-[#D2E7DC] pb-5">
       <div>
-        <h1 className="text-3xl font-bold text-white">
+        <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
           Dashboard
         </h1>
-        <p className="text-slate-400 text-sm">
+        <p className="text-slate-500 text-sm mt-0.5">
           Welcome back, Dr. Sarah 👋
         </p>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
+        <p className="text-xs sm:text-sm font-medium text-slate-600 hidden md:block px-3 py-1.5 rounded-lg bg-[#F8FCFA] border border-[#D2E7DC]">
+          {today}
+        </p>
 
-  <p className="text-sm text-slate-400">
-    {today}
-  </p>
+        <button className="p-2.5 rounded-xl bg-[#F8FCFA] hover:bg-[#EEF7F2] border border-[#D2E7DC] text-slate-600 transition-colors shadow-2xs">
+          <Search size={18} />
+        </button>
 
-  <button className="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 transition">
-    <Search size={18} className="text-slate-300" />
-  </button>
+        <div className="relative">
+          <button className="p-2.5 rounded-xl bg-[#F8FCFA] hover:bg-[#EEF7F2] border border-[#D2E7DC] text-slate-600 transition-colors shadow-2xs">
+            <Bell size={18} />
+          </button>
 
-  <div className="relative">
-  <button className="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 transition">
-    <Bell size={18} className="text-slate-300" />
-  </button>
-
-  <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-red-500"></span>
-</div>
-</div>
+          <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-[#2E7D5B]"></span>
+        </div>
+      </div>
     </header>
   );
 }

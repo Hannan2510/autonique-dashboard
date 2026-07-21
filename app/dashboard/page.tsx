@@ -47,12 +47,12 @@ export default function DashboardPage() {
       {/* Analytics Section */}
       <div className="mt-8 grid grid-cols-1 gap-6 xl:grid-cols-3">
         {/* Chart */}
-        <div className="xl:col-span-2 rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <div className="xl:col-span-2 rounded-2xl border border-[#D2E7DC] bg-[#F8FCFA] p-6 shadow-xs">
           <AppointmentChart />
         </div>
 
         {/* Recent Appointments */}
-        <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <div className="rounded-2xl border border-[#D2E7DC] bg-[#F8FCFA] p-6 shadow-xs">
           <RecentAppointments />
         </div>
       </div>

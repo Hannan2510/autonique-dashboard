@@ -8,16 +8,16 @@ interface AppLayoutProps {
 
 export default function AppLayout({ children }: AppLayoutProps) {
   return (
-    <div className="flex min-h-screen bg-slate-950">
+    <div className="flex min-h-screen bg-[#F0F7F4] text-slate-800 font-sans">
       <AppSidebar />
 
-      <main className="flex-1 p-8 overflow-y-auto">
-  <Navbar />
+      <main className="flex-1 p-6 md:p-8 overflow-y-auto">
+        <Navbar />
 
-  <div className="mt-8">
-    {children}
-  </div>
-</main>
+        <div className="mt-8">
+          {children}
+        </div>
+      </main>
     </div>
   );
 }
